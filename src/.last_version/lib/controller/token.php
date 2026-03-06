@@ -21,21 +21,28 @@ class Token extends Controller
 
     public function configureActions()
     {
-        return [
+        $settings = [
             'get' => [
-                'prefilters' => [
-                    new ActionFilter\Cors(),
-                    // new ActionFilter\Csrf(),
-                ]
+                'prefilters' => [],
             ],
             'check' => [
                 'prefilters' => [
                     new TokenAuth(),
-                    new ActionFilter\Cors(),
-                    // new ActionFilter\Csrf(),
-                ]
+                ],
             ],
         ];
+
+        if ('Y' === Option::get('agrebnev.oauth20', 'controllerFilterCORS', 'Y')) {
+            $settings['get']['prefilters'][] = new ActionFilter\Cors();
+            $settings['check']['prefilters'][] = new ActionFilter\Cors();
+        }
+
+        if ('Y' === Option::get('agrebnev.oauth20', 'controllerFilterCSRF', 'N')) {
+            $settings['get']['prefilters'][] = new ActionFilter\Csrf();
+            $settings['check']['prefilters'][] = new ActionFilter\Csrf();
+        }
+
+        return $settings;
     }
 
     /**

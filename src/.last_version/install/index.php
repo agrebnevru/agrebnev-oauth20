@@ -29,6 +29,7 @@ class agrebnev_oauth20 extends CModule
         $this->MODULE_NAME = Loc::getMessage('AGREBNEV_OAUTH20_INSTALL_NAME');
         $this->MODULE_DESCRIPTION = Loc::getMessage('AGREBNEV_OAUTH20_INSTALL_DESCRIPTION');
         $this->PARTNER_NAME = Loc::getMessage('AGREBNEV_OAUTH20_INSTALL_COPMPANY_NAME');
+        $this->PARTNER_URI = 'https://agrebnev.ru/';
     }
 
     public function DoInstall()

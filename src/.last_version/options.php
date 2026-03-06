@@ -35,6 +35,25 @@ $allOptions['agrebnev_oauth20_tab_settings'][] = [
     3600,
     ['text']
 ];
+$allOptions['agrebnev_oauth20_tab_settings'][] = Loc::getMessage('AGREBNEV_OAUTH20_OPTIONS_FILTER_MODULE_CONTROLLER');
+$allOptions['agrebnev_oauth20_tab_settings'][] = [
+    'controllerFilterCORS',
+    Loc::getMessage('AGREBNEV_OAUTH20_OPTIONS_CONTROLLER_FILTER__CORS'),
+    'Y',
+    ['checkbox', 'Y']
+];
+$allOptions['agrebnev_oauth20_tab_settings'][] = [
+    'controllerFilterCSRF',
+    Loc::getMessage('AGREBNEV_OAUTH20_OPTIONS_CONTROLLER_FILTER__CSRF'),
+    'N',
+    ['checkbox', 'Y']
+];
+$allOptions['agrebnev_oauth20_tab_settings'][] = [
+    '',
+    '',
+    Loc::getMessage('AGREBNEV_OAUTH20_OPTIONS_CONTROLLER_FILTER__INFO'),
+    ['statichtml']
+];
 /************************ tab ***************************/
 
 if (
